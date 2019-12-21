@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import { QuillModule } from 'ngx-quill'
+import { QuillModule } from 'ngx-quill';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { EditorComponent } from './editor/editor.component';
+import { ConfigService } from './config.service';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,12 @@ import { EditorComponent } from './editor/editor.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     QuillModule.forRoot()
 
   ],
-  providers: [],
+  providers: [ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
