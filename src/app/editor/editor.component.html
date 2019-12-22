@@ -1,12 +1,16 @@
 <form [formGroup]="form">
-  <!-- {{ form.get('editor').value }} -->
-  <!-- <button type="button" (click)="patchValue()">patchValue</button> -->
-  <!-- <button type="button" (click)="setControl()">setControl</button> -->
-  <quill-editor format="text"
-    #editor [style.display]="hide ? 'none' : 'block'"
-    [styles]="{ backgroundColor:backgroundColor }"
-    [formControl]="form.controls['editor']">
-  </quill-editor>
-  <button type="button" class="btn btn-primary" (click)="transliterate()">Transliterate</button>
-
+    <!-- {{ form.get('editor').value }} -->
+    <!-- <button type="button" (click)="patchValue()">patchValue</button> -->
+    <!-- <button type="button" (click)="setControl()">setControl</button> -->
+    <div class="row"> 
+        <quill-editor class="col-sm-6" format="text"
+                 #srcEditor style.display =  'block'
+                 [formControl]="form.controls['srcEditor']">
+        </quill-editor>
+        <quill-editor #tgtEditor [formControl]="form.controls['tgtEditor']" 
+                 format="text" class="col-sm-6"> </quill-editor>
+    </div>
+    <!-- <div class="row m-sm-5">
+        <button type="button" class="btn btn-primary" (click)="transliterate()">Transliterate</button>
+    </div> -->
 </form>
