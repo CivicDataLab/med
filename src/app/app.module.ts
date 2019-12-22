@@ -14,6 +14,7 @@ import { EditorComponent } from './editor/editor.component';
 import { ConfigService } from './config.service';
 import { TranslationComponent } from './translation/translation.component';
 import { TransliterationComponent } from './transliteration/transliteration.component';
+import { TranslationService } from './Services/translation.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { TransliterationComponent } from './transliteration/transliteration.comp
     QuillModule.forRoot()
 
   ],
-  providers: [ConfigService],
+  providers: [ConfigService, TranslationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

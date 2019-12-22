@@ -1,9 +1,12 @@
 <form [formGroup]="form">
-    <div class="row"> 
-        <input class="col-sm-6"
+    <div> 
+        <input class="col-sm-5 p-5 mx-2"
                 #srcInput
                 [formControl]="form.controls['srcInput']">
         <input #tgtInput [formControl]="form.controls['tgtInput']" 
-                class="col-sm-6 m-6"> 
+                class="col-sm-5 p-5 mx-2"> 
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary mt-3" (click)="translate()">Translate</button>
     </div>
 </form>
