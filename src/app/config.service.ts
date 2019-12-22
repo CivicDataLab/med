@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Transliteration } from './editor/Transliteration';
 
 @Injectable({
     providedIn: 'root'
@@ -16,7 +17,7 @@ export class ConfigService {
         this.log('getting transliteration');
         return this
                 .http
-                .get(`${this.base_url}/trans?word=${text}`).pipe(
+                .get<Transliteration>(`${this.base_url}/trans?word=${text}`).pipe(
                          catchError(this.handleError('transliteration', ''))
         );
     }

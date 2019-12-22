@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { QuillEditorComponent } from 'ngx-quill';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { ConfigService } from '../config.service';
+import { Transliteration } from './Transliteration';
 
 @Component({
   selector: 'app-editor',
@@ -47,10 +48,10 @@ export class EditorComponent implements OnInit {
       console.log(`${this.form.get('editor').value}`);
       console.log(`${this.form.controls.editor.value}`);
       this.configService.getTransliteration(`${this.form.get('editor').value}`)
-      .subscribe(res => {
-          console.log(res);
+      .subscribe( (res: Transliteration) => {
+              this.form.get('editor').patchValue(res.transliteration[0]);
           });
-    this.form.get('editor').patchValue(`Transliterated content`);
+      // this.form.get('editor').patchValue(`Transliterated content`);
   }
 
 }
