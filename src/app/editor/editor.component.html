@@ -2,11 +2,11 @@
   <!-- {{ form.get('editor').value }} -->
   <!-- <button type="button" (click)="patchValue()">patchValue</button> -->
   <!-- <button type="button" (click)="setControl()">setControl</button> -->
-  <button type="button" (click)="transliterate()">Transliterate</button>
   <quill-editor format="text"
     #editor [style.display]="hide ? 'none' : 'block'"
     [styles]="{ backgroundColor:backgroundColor }"
     [formControl]="form.controls['editor']">
   </quill-editor>
+  <button type="button" class="btn btn-primary" (click)="transliterate()">Transliterate</button>
 
 </form>
