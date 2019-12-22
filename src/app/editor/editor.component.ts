@@ -11,7 +11,6 @@ import { ConfigService } from '../config.service';
 })
 export class EditorComponent implements OnInit {
   form: FormGroup;
-  backgroundColor = '';
   @ViewChild('editor', {
     static: true
   }) editor: QuillEditorComponent;
@@ -45,7 +44,12 @@ export class EditorComponent implements OnInit {
   }
 
   transliterate() {
-    this.configService.getTransliteration();
+      console.log(`${this.form.get('editor').value}`);
+      console.log(`${this.form.controls.editor.value}`);
+      this.configService.getTransliteration(`${this.form.get('editor').value}`)
+      .subscribe(res => {
+          console.log(res);
+          });
     this.form.get('editor').patchValue(`Transliterated content`);
   }
 

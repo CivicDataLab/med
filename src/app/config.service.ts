@@ -12,12 +12,12 @@ export class ConfigService {
     constructor(private http: HttpClient) { }
     base_url = 'http://localhost:5000';
 
-    getTransliteration() {
+    getTransliteration( text: string ) {
         this.log('getting transliteration');
         return this
-        .http
-        .get(`${this.base_url}/trans?word=hello`).pipe(
-               catchError(this.handleError('transliteration', ''))
+                .http
+                .get(`${this.base_url}/trans?word=${text}`).pipe(
+                         catchError(this.handleError('transliteration', ''))
         );
     }
 
