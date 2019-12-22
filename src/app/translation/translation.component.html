@@ -1,1 +1,9 @@
-<p>translation works!</p>
+<form [formGroup]="form">
+    <div class="row"> 
+        <input class="col-sm-6"
+                #srcInput
+                [formControl]="form.controls['srcInput']">
+        <input #tgtInput [formControl]="form.controls['tgtInput']" 
+                class="col-sm-6 m-6"> 
+    </div>
+</form>
