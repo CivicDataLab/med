@@ -12,12 +12,14 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { EditorComponent } from './editor/editor.component';
 import { ConfigService } from './config.service';
+import { TransliterationComponent } from './transliteration/transliteration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    EditorComponent
+    EditorComponent,
+    TransliterationComponent
   ],
   imports: [
     BrowserModule,
