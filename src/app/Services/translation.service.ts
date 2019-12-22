@@ -7,7 +7,7 @@ import { Translation } from '../translation/Translation';
 })
 
 export class TranslationService {
-  
+
   constructor(private http: HttpClient) { }
 
   base_url = 'http://localhost:5000';

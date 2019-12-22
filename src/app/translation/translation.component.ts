@@ -12,7 +12,7 @@ import { Translation } from './Translation';
 export class TranslationComponent implements OnInit {
   form: FormGroup;
 
-  constructor(fb: FormBuilder, private translateService: TranslationService) { 
+  constructor(fb: FormBuilder, private translateService: TranslationService) {
     this.form = fb.group({
       srcInput: '',
       tgtInput: ''
@@ -30,7 +30,7 @@ export class TranslationComponent implements OnInit {
         .subscribe((data) => {
             // tslint:disable-next-line:no-console
             console.log('native fromControl value changes with debounce', data);
-        });       
+        });
   }
 
   translate() {
