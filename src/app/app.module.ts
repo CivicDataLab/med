@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { EditorComponent } from './editor/editor.component';
 import { ConfigService } from './config.service';
+import { TranslationComponent } from './translation/translation.component';
 import { TransliterationComponent } from './transliteration/transliteration.component';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { TransliterationComponent } from './transliteration/transliteration.comp
     AppComponent,
     TopBarComponent,
     EditorComponent,
+    TranslationComponent,
     TransliterationComponent
   ],
   imports: [
